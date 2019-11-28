@@ -18,6 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // RESTful api
+
+Route::post('/login', 'AuthController@login');
+
 Route::get('/tasks', 'MyTasksController@index');
 Route::post('/tasks', 'MyTasksController@store');
 Route::patch('/tasks/{task}', 'MyTasksController@update');

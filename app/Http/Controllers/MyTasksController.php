@@ -32,7 +32,9 @@ class MyTasksController extends Controller
             'title' => 'required|string',
             'completed' => 'required|boolean',
             'pinned' => 'required|boolean',
-            'user_order' => 'required|integer',
+            'standard_order' => 'required|integer',
+            'pinned_order' => 'required|integer',
+            'description' => 'nullable|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
         ]);
 
         $task = myTasks::create($data);
@@ -57,7 +59,7 @@ class MyTasksController extends Controller
             'title' => 'required|string',
             'completed' => 'required|boolean',
             'pinned' => 'required|boolean',
-            'user_order' => 'required|integer',
+            'standard_order' => 'required|integer',
         ]);
         
         // Update the task with the new data

@@ -15,5 +15,8 @@ This is the corresponding server-side RESTful API that is used for the fetching,
 ## Technologies Utilised
 * [PHP 7.3](https://github.com/php/php-src)
 * [Laravel](https://github.com/laravel/laravel)
-* [Laravel-cors ](https://github.com/barryvdh/laravel-cors) - Allows for cross-origin API calls when not using the same domain (developer mode)
+* [Laravel-cors](https://github.com/barryvdh/laravel-cors) - Cross-origin API calls when not using the same domain (developer mode)
+* [Laravel Passport](https://laravel.com/docs/5.8/passport) - OAuth2 based API authentication
 
+### Notes
+* artisan serve command doesn't play well with guzzle http requests. For dev testing, switched the apache dev server htdocs

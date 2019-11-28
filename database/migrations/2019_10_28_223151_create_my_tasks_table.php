@@ -16,8 +16,14 @@ class CreateMyTasksTable extends Migration
         Schema::create('my_tasks', function (Blueprint $table) {
             // Main identifiers
             $table->bigIncrements('id');
-            $table->bigInteger('user_order');
+            $table->integer('standard_order');
+            $table->integer('pinned_order');
+
+            // Content
             $table->text('title');
+            $table->text('description')->nullable();
+            $table->text('img_url')->nullable();
+            $table->dateTime('due_date_time')->nullable();
 
             // Flags
             $table->boolean('completed')->default(false);
@@ -37,6 +43,6 @@ class CreateMyTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('my_tasks');
+        Schema::drop('my_tasks');
     }
 }
